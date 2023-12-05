@@ -1,3 +1,4 @@
+
 class Particle {
     constructor(){
         this.x = width/2;
@@ -8,8 +9,6 @@ class Particle {
         this.gray = random(255);
     }
     show(){
-        noStroke();
-        fill(this.gray);
         ellipse(this.x, this.y, this.r);
     }
     update(){
@@ -18,19 +17,15 @@ class Particle {
     }
 }
 
-let particles = [];
+let particle;
 
 function setup(){
     createCanvas(windowWidth, windowHeight);
-    for(let i = 0; i < 100; i++){
-        particles.push(new Particle());
-    }
+        particle = new Particle();
 }
 
 function draw(){
     background(100);
-    for(let i = 0; i < particles.length; i++){
-        particles[i].show();
-        particles[i].update();
-    }
+    particle.show();
+    particle.update();
 }

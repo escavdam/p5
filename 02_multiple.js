@@ -1,3 +1,4 @@
+
 class Particle {
     constructor(){
         this.x = width/2;
@@ -5,11 +6,8 @@ class Particle {
         this.r = random(20);
         this.velX = random(-1, 1);
         this.velY = random(-1, 1);
-        this.gray = random(255);
     }
     show(){
-        noStroke();
-        fill(this.gray);
         ellipse(this.x, this.y, this.r);
     }
     update(){
