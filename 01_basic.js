@@ -1,4 +1,4 @@
-
+//Ejemplo con la clase particula basica
 class Particle {
     constructor(){
         this.x = width/2;

@@ -1,3 +1,4 @@
+//En este ejemplo, creamos una lista con varias particulas
 
 class Particle {
     constructor(){

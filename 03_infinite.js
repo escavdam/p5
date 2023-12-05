@@ -1,3 +1,7 @@
+//Este ejemplo crea particulas en el centro de la pantalla continuamente
+//Controlamos el numero de particulas en el array comprobando si salen fuera de la pantalla
+//Para evitar que la longitud del array se modifique mientras lo recorremos, lo hacemos al reves
+//De esta manera, si eliminamos un elemento, no afecta a los que quedan por recorrer
 let p = [];
 
 function setup() {
@@ -14,9 +18,6 @@ function draw() {
             p.splice(i, 1);
         }
     }
-
-    console.log(p.length);
-
     p.push(new Particle()); // Añade una nueva partícula en cada fotograma
 }
 
