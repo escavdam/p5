@@ -9,7 +9,7 @@ function setup() {
 }
 
 function draw() {
-    background(0);
+    background(120);
 
     for (let i = p.length - 1; i >= 0; i--) {
         p[i].update();
@@ -28,7 +28,7 @@ class Particle {
         this.y = height / 2;
         this.velX = random(-1, 1);
         this.velY = random(-1, 1);
-        this.size = random(1, 150);
+        this.size = random(1, 50);
         this.grey = random(0, 160);
     }
 

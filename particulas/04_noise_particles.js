@@ -14,11 +14,13 @@ function draw() {
     for (let i = p.length - 1; i >= 0; i--) {
         p[i].update();
         p[i].show();
-        if (p[i].isDead()) {
-            p.splice(i, 1);
-        }
+        
     }
-    p.push(new Particle(noise(frameCount/200) * width, noise(frameCount/300) * height)); // Añade una nueva partícula en cada fotograma
+    p = p.filter(particle => !particle.isDead());
+    if(p.length < 10){
+
+        p.push(new Particle(noise(frameCount/200) * width, noise(frameCount/300) * height)); // Añade una nueva partícula en cada fotograma
+    }
 }
 
 class Particle {
