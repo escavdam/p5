@@ -9,7 +9,7 @@ function setup() {
 }
 
 function draw() {
-    background(200);
+    background(255);
 
     for (let i = p.length - 1; i >= 0; i--) {
         p[i].update();
@@ -18,17 +18,17 @@ function draw() {
             p.splice(i, 1);
         }
     }
-    p.push(new Particle(mouseX, mouseY)); // Añade una nueva partícula en cada fotograma
+    p.push(new Particle(noise(frameCount/200) * width, noise(frameCount/300) * height)); // Añade una nueva partícula en cada fotograma
 }
 
 class Particle {
     constructor(x, y) {
         this.x = x;
         this.y = y;
-        this.velX = random(-1, 1);
-        this.velY = random(-1, 1);
+        this.velX = random(-2, 2);
+        this.velY = random(-2, 2);
         this.size = random(1, 100);
-        this.life = random(20, 100);
+        this.life = random(10, 150);
         this.r = random(255);
         this.g = random(255);
         this.b = random(255);
