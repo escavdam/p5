@@ -18,7 +18,10 @@ function draw() {
             p.splice(i, 1);
         }
     }
-    p.push(new Particle(mouseX, mouseY)); // Añade una nueva partícula en cada fotograma
+    if(p.length < 20){
+        p.push(new Particle(mouseX, mouseY)); // Añade una nueva partícula en cada fotograma
+
+    }
 }
 
 class Particle {

@@ -9,7 +9,7 @@ function setup() {
 }
 
 function draw() {
-    background(255);
+    background(180);
 
     for (let i = p.length - 1; i >= 0; i--) {
         p[i].update();
@@ -17,9 +17,9 @@ function draw() {
         
     }
     p = p.filter(particle => !particle.isDead());
-    if(p.length < 10){
+    if(p.length < 200){
 
-        p.push(new Particle(noise(frameCount/200) * width, noise(frameCount/300) * height)); // Añade una nueva partícula en cada fotograma
+        p.push(new Particle(noise(frameCount/100) * width, noise(frameCount/50) * height)); // Añade una nueva partícula en cada fotograma
     }
 }
 
@@ -29,23 +29,20 @@ class Particle {
         this.y = y;
         this.velX = random(-2, 2);
         this.velY = random(-2, 2);
-        this.size = random(1, 100);
-        this.life = random(10, 150);
-        this.r = random(255);
-        this.g = random(255);
-        this.b = random(255);
+        this.size = random(3, 30);
+        this.color = random(["#845EC2", "#D65DB1", "#FF6F91", "#FF9671", "#F9F871"])
     }
     update() {
         this.x += this.velX;
         this.y += this.velY;
-        this.life--;
+        this.size -= 1;
     }
     show() {
         noStroke()
-        fill(this.r, this.g, this.b);
+        fill(this.color);
         ellipse(this.x, this.y, this.size);
     }
     isDead() {
-        return (this.life < 0);
+        return (this.size < 0);
     }
 }

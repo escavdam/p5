@@ -28,13 +28,24 @@ body{
 }
 
 .glass{
-    backdrop-filter: blur( 30px );
+    backdrop-filter: blur( 5px );
     /* background-image: url( "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 2 2'><path d='M0 0h2v2H0z' fill='%23fff' opacity='.05'/></svg>" ); */
-    width: 100%;
-    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    box-shadow: 0 0 10px rgba( 0, 0, 0, .25 );
+    padding: 3em;
 
 }
-
+a{
+    text-decoration: none;
+    color: white;
+    background: #333;
+    padding: 10px;
+    border-radius: 12px;
+    margin: 10px;
+}
 .range{
     display:flex;
     flex-direction: column;

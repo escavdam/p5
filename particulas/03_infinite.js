@@ -15,10 +15,13 @@ function draw() {
         p[i].update();
         p[i].show();
         if (p[i].isDead()) {
-            p.splice(i, 1);
+            p[i] = new Particle();
         }
     }
-    p.push(new Particle()); // Añade una nueva partícula en cada fotograma
+    if(p.length < 100){
+
+        p.push(new Particle()); // Añade una nueva partícula en cada fotograma
+    }
 }
 
 class Particle {
