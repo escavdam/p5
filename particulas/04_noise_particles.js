@@ -9,17 +9,16 @@ function setup() {
 }
 
 function draw() {
-    background(180);
+    background("#222222");
 
-    for (let i = p.length - 1; i >= 0; i--) {
-        p[i].update();
-        p[i].show();
-        
-    }
+    p.forEach(particle => {
+        particle.update();
+        particle.show();
+    });
     p = p.filter(particle => !particle.isDead());
-    if(p.length < 200){
+    if(p.length < 1000){
 
-        p.push(new Particle(noise(frameCount/100) * width, noise(frameCount/50) * height)); // Añade una nueva partícula en cada fotograma
+        p.push(new Particle(noise(frameCount/200) * width, noise(frameCount/500) * height)); // Añade una nueva partícula en cada fotograma
     }
 }
 
